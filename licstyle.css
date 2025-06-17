@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Staatliches&display=swap');
+
+/* 
+https://htmlcolorcodes.com/color-chart/material-design-color-chart/
+*/
+
+:root {
+  --blue-color: #0d47a1;
+  --yellow-color: #ffc400;
+  --bluegray-color: #455a64;
+  --violet-color: #7e57c2;
+  --pastelorange-color: #FCD8CD;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  max-width: 100vw;
+  z-index: 10;
+  padding: 10px 0;
+  margin: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+.navbar .navleft {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .navleft .navleft-heading {
+  font-size: 3rem;
+  font-family: 'Staatliches', "Poppins", sans-serif;
+  color: var(--blue-color);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--blue-color);
+}
+
+.navbar .navleft .navleft-subheading {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--bluegray-color);
+}
+
+.navbar .navlinks ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  animation: navlinksAppear 0.3s ease-in-out;
+}
+
+.navbar .navlinks ul li a {
+  text-decoration: none;
+  color: var(--bluegray-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar .navlinks .hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.navbar .navlinks .close-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.navbar .navlinks ul li a:hover {
+  color: var(--blue-color) !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+@keyframes navlinksAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.aboutme,
+.qualifications {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  max-width: 80vw;
+  margin: 10px auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutme .aboutme-left,
+.qualifications .qualifications-left,
+.experience .experience-flex,
+.services .services-flex,
+.contacts .contacts-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.aboutme .aboutme-left .aboutme-heading,
+.qualifications .qualifications-heading,
+.experience .experience-heading,
+.services .services-heading,
+.contacts .contacts-heading {
+  font-size: 3rem;
+  font-family: 'Staatliches', "Poppins", sans-serif;
+  color: var(--yellow-color);
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--yellow-color);
+}
+
+.aboutme .aboutme-left p {
+  font-size: 1.2rem;
+  color: var(--bluegray-color);
+  line-height: 1.6;
+}
+
+.aboutme .aboutme-left p span {
+  font-weight: 600;
+  color: var(--blue-color);
+}
+
+.aboutme .aboutme-right img,
+.qualifications .qualifications-right img {
+  width: 100%;
+  height: auto;
+  animation: slideup 0.3s ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+}
+
+@keyframes slideup {
+  from {
+    opacity: 0;
+    scale: 0.5;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
+  }
+}
+
+.qualifications .qualifications-left .qualifications-explained {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+}
+
+.qualifications .qualifications-left .qualifications-explained div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  max-width: 100%;
+  border: 1px solid var(--violet-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.qualifications .qualifications-left .qualifications-explained div:hover {
+  animation: moveuponHover 0.3s ease-in-out;
+  transform: translateY(-10px);
+}
+
+.qualifications .qualifications-left .qualifications-explained .exam {
+  font-size: 1.8rem;
+  color: var(--violet-color);
+  font-weight: 800;
+  position: relative;
+}
+
+.qualifications .qualifications-left .qualifications-explained p {
+  font-size: 1.2rem;
+  color: var(--bluegray-color);
+}
+
+.qualifications .qualifications-left .qualifications-explained::before {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 102%;
+  left: -5%;
+  border-radius: 10px;
+  background-color: var(--violet-color);
+  box-shadow: 10px 0 40px var(--violet-color);
+  animation: lineAppear 0.3s ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+.qualifications .qualifications-left .qualifications-explained .exam::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  left: -8.6%;
+  top: 10px;
+  background-color: var(--yellow-color);
+  box-shadow: 10px 0 40px var(--yellow-color), -10px 0 40px var(--yellow-color);
+  animation: lineAppear 0.3s ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+@keyframes moveuponHover {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes lineAppear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0px);
+  }
+}
+
+.experience,
+.services,
+.contacts {
+  background-image: url("licimages/background2.png");
+  background-color: rgba(255, 255, 255, 0.9);
+  background-blend-mode: overlay;
+  backdrop-filter: blur(10px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  max-width: 80vw;
+  margin: 30px auto 60px auto;
+}
+
+.experience .experience-flex .experience-explained,
+.contacts .contacts-flex .contacts-explained {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.experience .experience-flex .experience-explained div,
+.services .services-flex .services-explained div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  max-width: 100%;
+  height: fit-content;
+  border: 1px solid var(--violet-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  animation: boxAppear 0.3s ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 35%;
+}
+
+.experience .experience-flex .experience-explained div:hover,
+.services .services-flex .services-explained div:hover {
+  animation: moveuponHover 0.3s ease-in-out;
+  transform: translateY(-10px);
+}
+
+.experience .experience-flex .experience-explained .designation,
+.services .services-flex .services-explained .services-name,
+.contacts .contacts-flex .contacts-explained .contacts-part {
+  font-size: 1.8rem;
+  color: var(--violet-color);
+  font-weight: 800;
+  text-align: center;
+}
+
+.experience .experience-flex .experience-explained p,
+.services .services-flex .services-explained p {
+  font-size: 1.2rem;
+  color: var(--bluegray-color);
+}
+
+@keyframes boxAppear {
+  from {
+    scale: 0.5;
+    opacity: 0;
+    clip-path: circle(0% at 50% 50%);
+  }
+
+  to {
+    scale: 1;
+    opacity: 1;
+    clip-path: circle(100% at 50% 50%);
+  }
+}
+
+.services .services-flex .services-explained {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.services .services-flex .services-explained div {
+  border-radius: 500px;
+  text-align: center;
+  padding: 30px;
+}
+
+.contacts .contacts-flex .contacts-explained .contacts-left,
+.contacts .contacts-flex .contacts-explained .contacts-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  max-width: 100%;
+  height: fit-content;
+}
+
+.contacts .contacts-flex .contacts-explained .contacts-left .contacts-name,
+.contacts .contacts-flex .contacts-explained .contacts-left .contacts-number,
+.contacts .contacts-flex .contacts-explained .contacts-left .contacts-address {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--blue-color);
+}
+
+.contacts .contacts-flex .contacts-explained .contacts-left .contacts-name span,
+.contacts .contacts-flex .contacts-explained .contacts-left .contacts-number span,
+.contacts .contacts-flex .contacts-explained .contacts-left .contacts-address span {
+  font-weight: 500;
+  color: var(--bluegray-color);
+}
+
+.contacts .contacts-flex .contacts-explained .contacts-right {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.contacts .contacts-flex .contacts-explained .contacts-right .contacts-input,
+.contacts .contacts-flex .contacts-explained .contacts-right .contacts-textarea {
+  width: 60%;
+  height: 50px;
+  border-radius: 50px;
+  margin: auto;
+  border: 0;
+  outline: 0;
+  background-color: var(--pastelorange-color);
+  padding: 0px 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  animation: boxAppear 0.3s ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 25%;
+}
+
+.contacts .contacts-flex .contacts-explained .contacts-right .contacts-input:focus,
+.contacts .contacts-flex .contacts-explained .contacts-right .contacts-textarea:focus {
+  background-color: white;
+  border: 3px solid var(--pastelorange-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.contacts .contacts-flex .contacts-explained .contacts-right .contacts-checkboxes-heading {
+  color: var(--blue-color);
+}
+
+.contacts .contacts-flex .contacts-explained .contacts-right .checkboxes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contacts .contacts-flex .contacts-explained .contacts-right .checkboxes input,
+.contacts .contacts-flex .contacts-explained .contacts-right .checkboxes label {
+  cursor: pointer;
+}
+
+.contacts .contacts-flex .contacts-explained .contacts-right .contacts-textarea {
+  height: 10vh;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+
+.contacts .contacts-flex .contacts-explained .contacts-right .contacts-submit {
+  width: fit-content;
+  cursor: pointer;
+  height: 50px;
+  border-radius: 50px;
+  margin: auto;
+  border: 0;
+  outline: 0;
+  padding: 5px 30px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  border: 3px solid var(--violet-color);
+  animation: boxAppear 0.3s ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+}
+
+.contacts .contacts-flex .contacts-explained .contacts-right .contacts-submit:hover {
+  background-color: var(--violet-color);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+main {
+  border-bottom: 2px solid var(--pastelorange-color);
+}
+
+.copyright {
+  max-width: 80vw;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  font-size: 1.1rem;
+}
+
+.copyright .quicklinks,
+.copyright .info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.copyright .quicklinks .quicklinks-heading,
+.copyright .info span {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.copyright .quicklinks .quicklinks-list {
+  list-style: none;
+}
+
+.copyright .quicklinks .quicklinks-list a,
+.copyright .info p {
+  text-decoration: none;
+  color: var(--bluegray-color);
+  font-weight: 500;
+}
+
+.copyright .quicklinks .quicklinks-list a:hover {
+  color: var(--blue-color);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.copyright-text {
+  border-top: 2px solid var(--pastelorange-color);
+  padding: 10px 0;
+  max-width: 80vw;
+  margin: auto;
+  text-align: center;
+  color: var(--bluegray-color);
+}

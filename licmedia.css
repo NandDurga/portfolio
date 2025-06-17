@@ -1,0 +1,107 @@
+@media only screen and (max-width: 1025px) {
+
+    .navbar .navlinks ul {
+        display: none;
+    }
+
+    .navbar .navlinks .hamburger {
+        display: flex;
+    }
+
+    .navbar {
+        width: 90%;
+    }
+
+    .navbar .navlinks ul {
+        gap: 10px;
+        flex-direction: column;
+        position: absolute;
+        top: 15px;
+        right: 10vw;
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 5px;
+        border-radius: 10px;
+        height: max-content;
+        font-size: 1rem;
+    }
+
+    .aboutme,
+    .qualifications {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
+        max-width: 90vw;
+    }
+
+    .aboutme .aboutme-right,
+    .qualifications .qualifications-right {
+        max-width: 80%;
+    }
+
+    .qualifications .qualifications-left .qualifications-explained .exam::before {
+        display: none;
+    }
+
+    .qualifications .qualifications-left .qualifications-explained::before {
+        display: none;
+    }
+
+    .experience,
+    .services,
+    .contacts {
+        max-width: 90vw;
+        background-image: url("licimages/background4.png");
+        background-position: left;
+    }
+
+    .services .services-flex .services-explained div {
+        width: 90vw;
+    }
+
+    .experience .experience-flex .experience-explained,
+    .services .services-flex .services-explained,
+    .contacts .contacts-flex .contacts-explained {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .contacts .contacts-flex .contacts-explained .contacts-right .contacts-input,
+    .contacts .contacts-flex .contacts-explained .contacts-right .contacts-textarea {
+        width: 100%;
+    }
+
+    .qualifications .qualifications-left .qualifications-explained div {
+        animation: boxAppear 0.3s ease-in-out;
+        animation-timeline: view();
+        animation-range: entry 0% cover 35%;
+    }
+
+    .copyright,
+    .copyright-text {
+        max-width: 90vw;
+    }
+
+    .copyright .info p {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    header {
+        max-width: 90vw;
+    }
+
+    .navbar .navleft .navleft-heading {
+        font-size: 2.6rem;
+    }
+
+    .navbar .navleft .navleft-subheading {
+        font-size: 1rem;
+    }
+
+}
